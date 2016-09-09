@@ -4,7 +4,7 @@
 
     // Main
     initHeader();
-    initAnimation();
+    //initAnimation();
     addListeners();
 
     function initHeader() {
