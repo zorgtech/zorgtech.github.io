@@ -6,7 +6,7 @@
     initHeader();
     //initAnimation();
     addListeners();
-
+    initAnimation()
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
