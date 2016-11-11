@@ -1,0 +1,1 @@
+ss=function(a){return"#"===a.charAt(0)?document.getElementById(a.slice(1,5)):"."===a.charAt(0)?document.getElementsByClassName(a.slice(1,5)):document.getElementsByTagName(a)}

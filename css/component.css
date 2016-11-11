@@ -10,12 +10,7 @@
 }
 
 .demo-1 .large-header {
-	background-image: url('../img/demo-1-bg.jpg');
-}
-
-.demo-2 .large-header {
-	background-image: url('../img/demo-2-bg.jpg');
-	background-position: center bottom;
+	background-color:black;
 }
 
 .demo-3 .large-header {

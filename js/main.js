@@ -1,12 +1,14 @@
 (function() {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true,divisor=20;
 
     // Main
     initHeader();
     //initAnimation();
     addListeners();
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {} else {
     initAnimation()
+    }
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -22,10 +24,10 @@
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
+        for(var x = 0; x < width; x = x + width/divisor) {
+            for(var y = 0; y < height; y = y + height/divisor) {
+                var px = x + Math.random()*width/divisor;
+                var py = y + Math.random()*height/divisor;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }
@@ -153,7 +155,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+            ctx.strokeStyle = 'rgba(133,133,133,'+ p.active+')';
             ctx.stroke();
         }
     }
@@ -172,7 +174,7 @@
             if(!_this.active) return;
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
+            ctx.fillStyle = 'rgba(133,133,133,'+ _this.active+')';
             ctx.fill();
         };
     }
